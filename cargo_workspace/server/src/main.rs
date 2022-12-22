@@ -1,6 +1,7 @@
 use warp::Filter;
 
 mod filters;
+mod types;
 
 #[tokio::main]
 async fn main() {
@@ -19,4 +20,5 @@ async fn main() {
     warp::serve(api.or(graphiql).with(warp::log("http")))
         .run(([0, 0, 0, 0], 3030))
         .await;
+     
 }
